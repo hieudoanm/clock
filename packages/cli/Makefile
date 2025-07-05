@@ -1,0 +1,19 @@
+lint:
+	go vet ./...
+
+format:
+	go fmt ./...
+
+build:
+	go vet ./...
+	go fmt ./...
+	go build -o ./bin/clock ./main.go
+
+install:
+	go vet ./...
+	go fmt ./...
+	go build -o ./bin/clock ./main.go
+	mkdir -p ~/bin
+	cp ./bin/clock ~/bin/
+	chmod +x ~/bin/clock
+	export PATH="$(HOME)/bin:$(PATH)"

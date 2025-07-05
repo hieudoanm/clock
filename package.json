@@ -1,0 +1,32 @@
+{
+  "name": "@clock/app",
+  "version": "0.0.1",
+  "description": "clock",
+  "keywords": [
+    "clock"
+  ],
+  "homepage": "https://github.com/hieudoanm/clock#readme",
+  "bugs": {
+    "url": "https://github.com/hieudoanm/clock/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/hieudoanm/clock.git"
+  },
+  "license": "GPL-3.0",
+  "author": "hieudoanm <hieumdoan@gmail.com> (https://hieudoanm.github.io)",
+  "scripts": {
+    "lint": "turbo run lint",
+    "prebuild": "rimraf docs",
+    "build": "turbo run build",
+    "postbuild": "touch docs/.nojekyll",
+    "format": "turbo run format",
+    "prepare": "husky || true"
+  },
+  "devDependencies": {
+    "husky": "9.1.7",
+    "rimraf": "6.0.1",
+    "turbo": "2.5.4"
+  },
+  "packageManager": "pnpm@10.12.4"
+}
