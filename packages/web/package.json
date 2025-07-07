@@ -25,8 +25,7 @@
 		"prebuild": "rimraf .next",
 		"build": "next build",
 		"prestart": "kill-port 3000",
-		"start": "next start",
-		"prepare": "husky || true"
+		"start": "next start"
 	},
 	"dependencies": {
 		"next": "15.3.5",

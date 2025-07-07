@@ -1,3 +1,4 @@
+import { Navbar } from '@clock/components/shared/Navbar';
 import { NextPage } from 'next';
 import { useEffect, useState } from 'react';
 
@@ -46,21 +47,27 @@ const PomodoroPage: NextPage = () => {
 	};
 
 	return (
-		<div className="flex min-h-screen flex-col items-center justify-center bg-neutral-900 px-4 text-center text-white">
-			<h1 className="mb-6 text-4xl font-bold">Pomodoro Timer</h1>
-			<p className="mb-2 text-lg text-neutral-400">{isBreak ? 'Break Time' : 'Focus Time'}</p>
-			<div className="mb-6 font-mono text-6xl tabular-nums">{formatTime(timeLeft)}</div>
-			<div className="flex gap-4">
-				<button
-					onClick={() => setIsRunning((r) => !r)}
-					className="rounded-full border border-neutral-700 bg-neutral-800 px-6 py-2 transition hover:bg-neutral-700">
-					{isRunning ? 'Pause' : 'Start'}
-				</button>
-				<button
-					onClick={handleReset}
-					className="rounded-full border border-neutral-700 bg-neutral-800 px-6 py-2 transition hover:bg-neutral-700">
-					Reset
-				</button>
+		<div className="flex h-screen flex-col">
+			<Navbar />
+			<div className="w-full border-t border-neutral-800" />
+			<div className="grow">
+				<div className="flex h-full flex-col items-center justify-center bg-neutral-900 px-4 text-center text-white">
+					<h1 className="mb-6 text-4xl font-bold">Pomodoro Timer</h1>
+					<p className="mb-2 text-lg text-neutral-400">{isBreak ? 'Break Time' : 'Focus Time'}</p>
+					<div className="mb-6 font-mono text-6xl tabular-nums">{formatTime(timeLeft)}</div>
+					<div className="flex gap-4">
+						<button
+							onClick={() => setIsRunning((r) => !r)}
+							className="rounded-full border border-neutral-700 bg-neutral-800 px-6 py-2 transition hover:bg-neutral-700">
+							{isRunning ? 'Pause' : 'Start'}
+						</button>
+						<button
+							onClick={handleReset}
+							className="rounded-full border border-neutral-700 bg-neutral-800 px-6 py-2 transition hover:bg-neutral-700">
+							Reset
+						</button>
+					</div>
+				</div>
 			</div>
 		</div>
 	);
